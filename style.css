@@ -39,7 +39,6 @@ h1 {
   padding: 10px 0;
 }
 
-/* Title styles */
 .title {
   position: relative;
   cursor: pointer;
@@ -57,12 +56,10 @@ h1 {
   background-color: #717171;
 }
 
-/* Hover effect for title */
 .title:hover {
   background-color: #000000 !important;
 }
 
-/* Arrow styles */
 .title::after {
   content: "↓";
   position: absolute;
@@ -77,7 +74,6 @@ h1 {
   transform: rotate(180deg);
 }
 
-/* Description styles */
 .description {
   max-height: 0;
   overflow: hidden;
@@ -89,13 +85,11 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Show active description */
 .title.active + .description {
   max-height: 200px;
   opacity: 1;
 }
 
-/* Paragraph styles inside description */
 .description p {
   margin: 0;
   padding: 10px 0;

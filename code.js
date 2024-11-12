@@ -8,7 +8,6 @@ function toggle(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Predefined sections
   ["section1", "section2", "section3"].forEach((id) => {
     const sectionElement = document.getElementById(id);
     if (sectionElement) {
@@ -26,18 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const sectionDiv = document.createElement("div");
         sectionDiv.classList.add("section");
 
-        // Create title div with toggle functionality
+        // Create title div with toggle
         const titleDiv = document.createElement("div");
         titleDiv.classList.add("title");
         titleDiv.textContent = post.title;
 
-        // Create description div with initially hidden content
+        //  Description hidden content
         const descriptionDiv = document.createElement("div");
         descriptionDiv.classList.add("description");
         descriptionDiv.innerHTML = `<p>${post.body}</p>`;
         descriptionDiv.style.display = "none";
 
-        // Add click event to title to toggle active state and description display
+        // Add click event to title to toggle
         titleDiv.addEventListener("click", () => {
           titleDiv.classList.toggle("active");
           descriptionDiv.style.display =
