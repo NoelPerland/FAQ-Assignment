@@ -8,7 +8,7 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin: 0;
-  padding: 20px; /* Added padding to give space from the edges */
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,12 +25,12 @@ h1 {
 .accordion {
   width: 100%;
   font-size: x-large;
-  max-width: 860px; /* Make the blocks wider */
-  background-color: #444444; /* Darker background for the accordion */
+  max-width: 1080px;
+  background-color: #444444;
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow 
-  margin-top: 20px; /* Give some space from the top of the page */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
 
 .section {
@@ -39,25 +39,30 @@ h1 {
   padding: 10px 0;
 }
 
-/* Title styling */
+/* Title styles */
 .title {
   position: relative;
   cursor: pointer;
-  padding-right: 30px; /* Extra space for the rotating arrow */
+  padding-right: 30px;
   font-weight: bold;
   color: #d3d3d3;
   padding: 12px 20px;
-  background-color: #555555; /* Slightly lighter background for the title */
+  background-color: #555555;
   border-radius: 4px;
   margin-bottom: 5px;
   transition: background-color 0.3s ease;
 }
 
-.title:hover {
-  background-color: #666666; /* Darken the title on hover */
+.accordion .section:nth-child(even) .title {
+  background-color: #717171;
 }
 
-/* Arrow positioning and rotation */
+/* Hover effect for title */
+.title:hover {
+  background-color: #000000 !important;
+}
+
+/* Arrow styles */
 .title::after {
   content: "↓";
   position: absolute;
@@ -72,25 +77,25 @@ h1 {
   transform: rotate(180deg);
 }
 
-/* Description styling with sliding effect */
+/* Description styles */
 .description {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.3s ease, opacity 0.3s ease;
   padding: 0 20px;
-  background-color: #333333; /* Darker background for description */
+  background-color: #333333;
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
-/* Show the description when active */
+/* Show active description */
 .title.active + .description {
   max-height: 200px;
   opacity: 1;
 }
 
-/* Extra styling for paragraphs inside description */
+/* Paragraph styles inside description */
 .description p {
   margin: 0;
   padding: 10px 0;
