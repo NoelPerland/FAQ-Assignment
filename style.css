@@ -1,0 +1,99 @@
+html {
+  background: #3b3b3b;
+  color: #d3d3d3;
+  margin: 0;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 20px; /* Added padding to give space from the edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.accordion {
+  width: 100%;
+  font-size: x-large;
+  max-width: 860px; /* Make the blocks wider */
+  background-color: #444444; /* Darker background for the accordion */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow 
+  margin-top: 20px; /* Give some space from the top of the page */
+}
+
+.section {
+  border-bottom: 1px solid #929292;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+/* Title styling */
+.title {
+  position: relative;
+  cursor: pointer;
+  padding-right: 30px; /* Extra space for the rotating arrow */
+  font-weight: bold;
+  color: #d3d3d3;
+  padding: 12px 20px;
+  background-color: #555555; /* Slightly lighter background for the title */
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.title:hover {
+  background-color: #666666; /* Darken the title on hover */
+}
+
+/* Arrow positioning and rotation */
+.title::after {
+  content: "↓";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  font-size: 18px;
+}
+
+.title.active::after {
+  transform: rotate(180deg);
+}
+
+/* Description styling with sliding effect */
+.description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0 20px;
+  background-color: #333333; /* Darker background for description */
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Show the description when active */
+.title.active + .description {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Extra styling for paragraphs inside description */
+.description p {
+  margin: 0;
+  padding: 10px 0;
+  color: #cccccc;
+  line-height: 1.5;
+}
